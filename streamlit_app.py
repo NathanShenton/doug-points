@@ -150,7 +150,7 @@ def next_reward(balance_points: int):
     next_up = upcoming[0] if upcoming else None
     return best_affordable, next_up
 
-def require_pin() -> bool:
+def require_pin("pin_spend") -> bool:
     if not PARENT_PIN:
         st.warning("No PARENT_PIN set in Secrets. Add one to enable admin actions.")
         return False
@@ -244,7 +244,7 @@ for r in REWARDS:
 
 # Optional: custom spend with PIN (prevents “cheeky spends”)
 with st.expander("💸 Custom spend (Parent)"):
-    if require_pin():
+    if require_pin("pin_admin"):
         with st.form("spend_form", clear_on_submit=True):
             s1, s2 = st.columns(2)
             with s1:
