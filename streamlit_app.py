@@ -17,11 +17,10 @@ PARENT_PIN = st.secrets.get("PARENT_PIN", None)
 
 # Rewards shop (edit these)
 REWARDS = [
-    {"name": "🍬 Sweet treat", "cost": 25, "notes": "Pick one small sweet"},
-    {"name": "🎮 15 mins game time", "cost": 40, "notes": "Extra gaming time"},
-    {"name": "📺 Movie night pick", "cost": 80, "notes": "You choose the film"},
-    {"name": "🧸 Small toy", "cost": 150, "notes": "A little toy"},
-    {"name": "🧱 Lego time", "cost": 200, "notes": "Build together"},
+    {"name": "🍬 Sweeties", "cost": 5, "notes": "Pick one sweet"},
+    {"name": "🎮 30 mins game time", "cost": 5, "notes": "Extra gaming time"},
+    {"name": "📺 Movie night pick", "cost": 10, "notes": "You choose the film"},
+    {"name": "🧸 New toy", "cost": 25, "notes": "A New Toy"},
 ]
 
 QUICK_EARN = [
