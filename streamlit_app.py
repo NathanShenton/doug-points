@@ -77,7 +77,7 @@ def delete_entry(entry_id: int):
 # ---------------------------
 init_db()
 st.title("⭐ Points Tracker")
-st.caption(f"Value rate: £{POUNDS_PER_POINT:.2f} per point")
+st.caption(f"Value rate: £{POUNDS_PER_POINT:.10f} per point")
 
 df = load_entries()
 
