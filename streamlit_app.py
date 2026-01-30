@@ -32,12 +32,13 @@ REWARDS = [
 
 # Quick earn buttons (kid-friendly)
 QUICK_EARN = [
-    ("🦷 Teeth", 3),
+    ("🦷 Teeth", 2),
     ("🧸 Tidy toys", 3),
-    ("❤️ Kindness", 5),
-    ("📚 Homework", 5),
+    ("❤️ Kindness", 2),
+    ("📚 Homework", 3),
     ("🌙 Bedtime win", 4),
-    ("🤝 Helped", 4),
+    ("🤝 Helped", 2),
+    ("👕 Changed Clothes", 2),
 ]
 
 # ---------------------------
