@@ -6,7 +6,11 @@ from sqlalchemy import create_engine, text
 st.set_page_config(page_title="⭐ Points Tracker", page_icon="⭐", layout="centered")
 
 DB_URL = st.secrets["SUPABASE_DB_URL"]
-engine = create_engine(DB_URL, pool_pre_ping=True)
+engine = create_engine(
+    DB_URL,
+    pool_pre_ping=True,
+    connect_args={"sslmode": "require"},
+)
 
 def init_db():
     with engine.begin() as conn:
