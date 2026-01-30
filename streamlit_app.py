@@ -8,7 +8,7 @@ from sqlalchemy import create_engine, text
 # ---------------------------
 st.set_page_config(page_title="⭐ Points Tracker", page_icon="⭐", layout="centered")
 
-POUNDS_PER_POINT = 0.02  # 1 point = 2p (change to what you want)
+POUNDS_PER_POINT = 0.10  # 1 point = 2p (change to what you want)
 DEFAULT_PERSON = "Dougie"
 
 # ---------------------------
@@ -77,7 +77,7 @@ def delete_entry(entry_id: int):
 # ---------------------------
 init_db()
 st.title("⭐ Points Tracker")
-st.caption(f"Value rate: £{POUNDS_PER_POINT:.10f} per point")
+st.caption(f"Value rate: £{POUNDS_PER_POINT:.2f} per point")
 
 df = load_entries()
 
