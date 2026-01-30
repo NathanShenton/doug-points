@@ -9,7 +9,7 @@ from sqlalchemy import create_engine, text
 st.set_page_config(page_title="⭐ Dougie’s Points Bank", page_icon="⭐", layout="centered")
 
 DEFAULT_PERSON = "Dougie"
-POUNDS_PER_POINT = 0.10  # 1 point = 2p
+POUNDS_PER_POINT = 0.10  # 1 point = 10p
 
 # Set a parent PIN in Streamlit Secrets:
 # PARENT_PIN="1234"
@@ -150,11 +150,12 @@ def next_reward(balance_points: int):
     next_up = upcoming[0] if upcoming else None
     return best_affordable, next_up
 
-def require_pin("pin_spend") -> bool:
+def require_pin(widget_key: str) -> bool:
     if not PARENT_PIN:
         st.warning("No PARENT_PIN set in Secrets. Add one to enable admin actions.")
         return False
-    pin = st.text_input("Parent PIN", type="password")
+
+    pin = st.text_input("Parent PIN", type="password", key=widget_key)
     return pin == str(PARENT_PIN)
 
 # ---------------------------
@@ -244,7 +245,7 @@ for r in REWARDS:
 
 # Optional: custom spend with PIN (prevents “cheeky spends”)
 with st.expander("💸 Custom spend (Parent)"):
-    if require_pin("pin_admin"):
+    if require_pin("pin_spend"):
         with st.form("spend_form", clear_on_submit=True):
             s1, s2 = st.columns(2)
             with s1:
@@ -290,7 +291,7 @@ else:
 
 # Admin delete behind PIN
 with st.expander("🧰 Admin (Parent) — delete entry"):
-    if require_pin():
+    if require_pin("pin_admin"):
         if df.empty:
             st.info("Nothing to delete.")
         else:
