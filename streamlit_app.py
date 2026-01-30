@@ -6,7 +6,7 @@ from sqlalchemy import create_engine, text
 st.set_page_config(page_title="⭐ Points Tracker", page_icon="⭐", layout="centered")
 
 # ---- Configure what points are worth ----
-POUNDS_PER_POINT = 0.02  # e.g. 1 point = 2p  (change this)
+POUNDS_PER_POINT = 0.10  # e.g. 1 point = 2p  (change this)
 
 DB_URL = st.secrets["SUPABASE_DB_URL"]
 engine = create_engine(
